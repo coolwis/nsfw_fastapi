@@ -76,7 +76,7 @@ def upload_file(file: UploadFile):
 
 # ai model predict
 def get_ai_result(targetFile):
-    modelPath =fastApiServerPath + str(ai_model_path)
+    modelPath = str(ai_model_path)
     model = predict.load_model(modelPath)
     testFile=fastApiServerPath + str(targetFile)
     print ("get_ai_result> targetFile", testFile)
