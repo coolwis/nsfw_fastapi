@@ -86,6 +86,9 @@ export default {
     },
     uploadFiles(){
       const that = this; 
+      const apiUrl = process.env.VUE_APP_API_URL;
+      const uploadUrl = apiUrl+"/fastapi/file/upload/";
+      console.log('uploadUrl', uploadUrl);
       // one file
       const file = this.files[0];
       let formData  = new FormData();
@@ -95,8 +98,9 @@ export default {
       that.isNsfw = false;
       that.activeColor ='blue';
       axios( {
-        method:"POST",
-        url: "http://3.38.31.240:8001/fastapi/file/upload/", data: formData,
+        method:"POST",       
+        url: uploadUrl,
+        data: formData,
         headers : { "Content-Type":"multipart/form-data"},
       })      
       .then(function (response){	    	
