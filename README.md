@@ -46,5 +46,36 @@ yarn build
 yarn lint
 ```
 
+### BackEnd 설정 
+- .env.dev 파일 생성 후 아래 url을 추가
+  ```
+FAST_API_SERVER_PATH =/home/xxxxx/vue_fastapi/BackEnd/  ( 실행 소스 루트 경로 )
+AI_MODEL_PATH=/home/xxxxxx/vue_fastapi/BackEnd/app/nsfw_mobilenet2.224x224.h5  (모델 파일 경로)
+WEB_URL=http://xxxxxxx:8080   (프론트 실행 포트: 로컬에서 실행시 cors 막힘 방지) 
+  ```
+
+- 설정 customize (필요시)
+
+```
+ - GPU 사용하지 않는 환경이라면 
+환경설정에  gpu 사용안함값 설정해야 : TF_ENABLE_ONEDNN_OPTS  -> 0
+export  TF_ENABLE_ONEDNN_OPTS =0 
+
+ - pip install tensorflow
+ -  pip install tensorflow_hub
+ -  protobuf 버전 에러 발생시
+    pip install --upgrade "protobuf<=3.20.1"
+```
+```
+- fastApi 관련 설치
+  pip install fastapi uvicorn pyton-dotenv python-multipart aiofiles
+  
+fastapi==0.110.2 
+uvicorn==0.30.1 
+python additonal python-dotenv==0.21.1 
+python-multipart==0.0.9 
+aiofiles==24.1.0
+```
+
 ### 참고한 소스 
 AI Detect Model : https://github.com/GantMan/nsfw_model.git
