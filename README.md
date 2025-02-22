@@ -8,17 +8,18 @@ nsfw  Image classify
 Image를 업로드시 부적합 여부를 AI 모델에 의해 판단 결과 조회됨
 
 
-![Drop zone output](./dnd.gif)
+![Drop zone output](./FrontEnd/dnd.gif)
 
 ### 프로그램 구성도
 
 
-![Drop zone output](./dnd.gif)
+![Drop zone output](./FrontEnd/dnd.gif)
 
 ### FrontEnd 설정 
 - .env 파일에 백엔드 서비스 url 입력
+  ```
   예) VUE_APP_API_URL=http://xxxxxx:8001
-
+  ```
  
 - 모듈 설치
 
