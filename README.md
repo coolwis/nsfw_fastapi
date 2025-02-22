@@ -7,9 +7,6 @@ nsfw  Image classify
 ### 사용법
 Image를 업로드시 부적합 여부를 AI 모델에 의해 판단 결과 조회됨
 
-
-![Drop zone output](./FrontEnd/dnd.gif)
-
 <img width="400" alt="Image" src="https://github.com/user-attachments/assets/36d1e0b4-57bb-4fec-a33b-4e434f4282c3" />
 
 
