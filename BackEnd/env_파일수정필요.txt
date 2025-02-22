@@ -1,0 +1,4 @@
+ex)
+FAST_API_SERVER_PATH =/home/xxxxx/vue_fastapi/BackEnd/
+AI_MODEL_PATH=/home/xxxxxx/vue_fastapi/BackEnd/app/nsfw_mobilenet2.224x224.h5
+WEB_URL=http://xxxxxxx:8080
