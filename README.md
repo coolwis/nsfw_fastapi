@@ -10,7 +10,7 @@ Image를 업로드시 부적합 여부를 AI 모델에 의해 판단 결과 조�
 
 ![Drop zone output](./FrontEnd/dnd.gif)
 
-![Drop zone output](./FrontEnd/test_capture.png)
+<img width="300" alt="Image" src="https://github.com/user-attachments/assets/36d1e0b4-57bb-4fec-a33b-4e434f4282c3" />
 ### 프로그램 구성도
 
 
