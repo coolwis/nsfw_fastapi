@@ -1,12 +1,13 @@
-# nsfw_fastapi
+### 개요
+nsfw  Image classify
+(AI Model활용 부적절 이미지 판정)
+- 백엔드 서비스: FastApi (Python)
+- 프론트 : Vue
 
-nsfw  Image  classify,  FastApi (Python)
-
-# 사용법
+### 사용법
 Image를 업로드시 부적합 여부를 AI 모델에 의해 판단 결과 조회됨
 
-
-# Vue Dropfile
+### Vue Dropfile
 
 Drag-and-drop file upload component with Vue.js
 
