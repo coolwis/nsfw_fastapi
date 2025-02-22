@@ -7,13 +7,20 @@ nsfw  Image classify
 ### 사용법
 Image를 업로드시 부적합 여부를 AI 모델에 의해 판단 결과 조회됨
 
-### Vue Dropfile
-
-Drag-and-drop file upload component with Vue.js
 
 ![Drop zone output](./dnd.gif)
 
-## Project setup
+### 프로그램 구성도
+
+
+![Drop zone output](./dnd.gif)
+
+### FrontEnd 설정 
+- .env 파일에 백엔드 서비스 url 입력
+  예) VUE_APP_API_URL=http://xxxxxx:8001
+
+ 
+- 모듈 설치
 
 ```bash
 npm install
@@ -21,24 +28,19 @@ npm install
 yarn install
 ```
 
-### Compiles and hot-reloads for development
-
+- 컴파일 및 서버 실행 
 ```bash
 npm run serve
 # OR
 yarn serve
 ```
-
-### Compiles and minifies for production
-
+- 웹서버에 배포시 빌드
 ```bash
 npm run build
 # ORD
 yarn build
 ```
-
-### Lints and fixes files
-
+- 규칙에 맞도록 소스 보완 시 사용 
 ```
 yarn lint
 ```
