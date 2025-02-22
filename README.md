@@ -41,3 +41,6 @@ yarn build
 ```
 yarn lint
 ```
+
+### 참고한 소스 
+AI Detect Model : https://github.com/GantMan/nsfw_model.git
