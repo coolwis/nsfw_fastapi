@@ -1,0 +1,8 @@
+*.lock
+.env.*
+.env
+__pycache__
+dist
+build
+uploads
+yarn.lock

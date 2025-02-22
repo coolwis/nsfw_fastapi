@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-      <div>AI 모델 활용NSFW  이미지 판정</div>
-    
+      <div>AI 모델 활용 부적합  이미지 판정</div>
+    <hr/>
     <div
       class="dropzone-container"
       @dragover="dragover"
@@ -26,8 +26,8 @@
 
       <div class="preview-container mt-4" v-if="files.length">
         <div v-for="file in files" :key="file.name" class="preview-card">
-          <div>
-            <img class="preview-img" :src="generateThumbnail(file)" />
+          <div >
+            <img style="width: 100px;height:100px;" :src="generateThumbnail(file)" />
             <p :title="file.name">
               {{ makeName(file.name) }}
             </p>
@@ -46,12 +46,14 @@
       </div>
       <hr/>
       <div style="diplay:flex">
-          <label v-bind:style="{ color: 'darkgreen', fontSize: '25px' }">{{ "이미지 판정 결과:"}}</label> 
-          <div v-bind:style="{ color: activeColor, fontSize: '30px' }"> {{ resultMsg }} </div>
+         <div> 
+            <label v-bind:style="{ color: 'darkgreen', fontSize: '25px' }">{{ "이미지 판정 결과:"}}</label> 
+         </div>
+          <div v-bind:style="{ color: activeColor, fontSize: '20px' }"> {{ resultMsg }} </div>
       </div>      
       <div>
           <div  v-bind:style="{ color: 'darkgreen', fontSize: '25px' }"> {{ "AI 모델 측정값" }} </div>
-          <pre>  {{ resultData }} </pre>
+          <pre>  {{ JSON.stringify(resultData, null, 2) }} </pre>
       </div>
       <hr/>
       <div>	
@@ -59,8 +61,12 @@
        
         <div>FrontEnd:<b> Vue.js</b> </div>
         <div>BackEnd: <b>FastApi(Python) </b> </div>
-        <div>AI Model: <b>https://s3.amazonaws.com/ir_public/nsfwjscdn/nsfw_mobilenet2.224x224.h5</b> </div>
-        <div>git url: <b>https://github.com/coolwis/nsfw_fastapi.git</b> </div>
+        <div>AI Model: 
+            <a href="https://s3.amazonaws.com/ir_public/nsfwjscdn/nsfw_mobilenet2.224x224.h5">
+            nsfw_mobilenet2.224x224.h5 </a> 
+        </div>
+        <div>git url: <a href="https://github.com/coolwis/nsfw_fastapi.git">
+          https://github.com/coolwis/nsfw_fastapi.git</a> </div>
       </div>
     </div>
   </div>
@@ -77,6 +83,7 @@ export default {
       resultData: {},
       isNsfw : false,
       activeColor: 'blue',  
+      fileSrc: '',
     };
   },
   methods: {
@@ -136,12 +143,9 @@ export default {
       return fileSrc;
     },
 
+  
     makeName(name) {
-      return fileSrc;
-    },
-
-    makeName(name) {
-	if(name.length < 10) return name;
+	    if(name.length < 10) return name;
       return (	
         name.split(".")[0].substring(0,10 ) +
         "..." +
@@ -205,17 +209,15 @@ export default {
 .preview-card {
   display: flex;
   border: 1px solid #a2a2a2;
-.hidden-input {
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-  height: 1px;
+  padding: 5px;
+  margin-left: 5px;
 }
-.file-label {
-  font-size: 20px;
-  display: block;
-  cursor: pointer;
+.preview-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #a2a2a2;
+  background-color: #a2a2a2;
 }
 
 
