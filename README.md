@@ -55,19 +55,19 @@ yarn lint
   ```
 
 - 설정 customize (필요시)
-* GPU 사용하지 않는 환경이라면 
+#GPU 사용하지 않는 환경이라면 
 환경설정에  gpu 사용안함값 설정해야 : TF_ENABLE_ONEDNN_OPTS  -> 0
 export  TF_ENABLE_ONEDNN_OPTS =0 
 
 ```
  pip install tensorflow
  pip install tensorflow_hub
- protobuf 버전 에러 발생시
+ #protobuf 버전 에러 발생시
  pip install --upgrade "protobuf<=3.20.1"
 ```
 ```
-  fastApi 관련 설치
-  pip install fastapi uvicorn pyton-dotenv python-multipart aiofiles
+#fastApi 관련 설치
+pip install fastapi uvicorn pyton-dotenv python-multipart aiofiles
   
 fastapi==0.110.2 
 uvicorn==0.30.1 
