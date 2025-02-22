@@ -42,7 +42,7 @@ npm run build
 yarn build
 ```
 - ERR_OSSL_EVP_UNSUPPORTED' 에러 발생시
-  set NODE_OPTIONS=--openssl-legacy-provider
+  ```set NODE_OPTIONS=--openssl-legacy-provider```
 - 규칙에 맞도록 소스 보완 시 사용 
 ```
 yarn lint
