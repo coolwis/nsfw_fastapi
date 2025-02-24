@@ -3,7 +3,7 @@ nsfw  Image classify
 (AI Model활용 부적절 이미지 판정)
 - 백엔드 서비스: FastApi (Python)
 - 프론트 : Vue
-- Usage AI Model: https://s3.amazonaws.com/ir_public/nsfwjscdn/nsfw_mobilenet2.224x224.h5
+- AI Model File: https://s3.amazonaws.com/ir_public/nsfwjscdn/nsfw_mobilenet2.224x224.h5
 
 ### 사용법
 Image를 업로드시 부적합 여부를 AI 모델에 의해 판단 결과 조회됨
