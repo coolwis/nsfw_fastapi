@@ -1,1 +1,2 @@
+# .env  파일 생성
 VUE_APP_API_URL=http://xxxxxx:8001
