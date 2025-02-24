@@ -6,6 +6,7 @@ nsfw  Image classify
 
 ### 사용법
 Image를 업로드시 부적합 여부를 AI 모델에 의해 판단 결과 조회됨
+
 <img width="400" alt="Image" src="https://github.com/user-attachments/assets/e5c3dba5-96e3-430f-8093-6b67dc1be22a" />
 
 ### 프로그램 구성도
