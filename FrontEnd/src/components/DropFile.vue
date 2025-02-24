@@ -86,7 +86,19 @@ export default {
       fileSrc: '',
     };
   },
+  mounted() {
+    this.initData();
+  },
   methods: {
+    initData() {
+      this.resultData = {
+        "drawings": 0,
+        "hentai": 0,
+        "neutral": 0,
+        "porn": 0,
+        "sexy": 0,
+        }
+    },
     onChange() {
       this.files = [...this.$refs.file.files];
 	    this.uploadFiles();
@@ -101,7 +113,8 @@ export default {
       let formData  = new FormData();
       formData.append("file", file);
       // backen: __init__.py 에서 aws url 수정 필요!!
-      that.resultMsg ='';
+      that.resultMsg = '';
+      that.initData();
       that.isNsfw = false;
       that.activeColor ='blue';
       axios( {
@@ -123,7 +136,9 @@ export default {
             const nsfw1 = Number(points.sexy);
             const nsfw2 =  Number(points.porn);
             console.log('222',  points);
-            if(nsfw1 > 8 || nsfw2 > 8) { 
+            console.log('nsfw1',  nsfw1);
+            console.log('nsfw2',  nsfw2);
+            if(nsfw1 > 0.8 || nsfw2 > 0.8) { 
               that.resultMsg='부적합한 이미지로 판정 되었습니다!';			
               that.isNsfw = true;		
               that.activeColor ='red';	
