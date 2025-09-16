@@ -7,7 +7,7 @@ nsfw  Image classify
 
 ### 사용법
 - Image를 업로드시 부적합 여부를 AI 모델에 의해 판단 결과 조회됨
-- AWS EC2 server: http://3.34.69.170:18077    
+- AWS EC2 server: http://3.39.37.193:18077    
 
 <img width="400" alt="Image" src="https://github.com/user-attachments/assets/e5c3dba5-96e3-430f-8093-6b67dc1be22a" />
 
@@ -15,7 +15,7 @@ nsfw  Image classify
 
 
 ### FrontEnd 설정 
-- .env 파일에 백엔드 서비스 url 입력
+- .env 파일에 백엔드 서비스 Api url 입력
   ```
   예) VUE_APP_API_URL=http://xxxxxx:8001
   ```
@@ -52,7 +52,7 @@ yarn lint
   ```
   FAST_API_SERVER_PATH =/home/xxxxx/vue_fastapi/BackEnd/  ( 실행 소스 루트 경로 )
   AI_MODEL_PATH=/home/xxxxxx/vue_fastapi/BackEnd/app/nsfw_mobilenet2.224x224.h5  (모델 파일 경로)
-  WEB_URL=http://xxxxxxx:8080   (프론트 실행 포트: 로컬에서 실행시 cors 막힘 방지) 
+  WEB_URL=http://xxxxxxx:18077   (프론트 실행 포트: BackEnd 호출시 cors 막힘 방지) 
   ```
 
 - 설정 customize (필요시)
@@ -78,6 +78,10 @@ python additonal python-dotenv==0.21.1
 python-multipart==0.0.9 
 aiofiles==24.1.0
 ```
+- 실행 명령어
+  BackEnd root 경로에서 실행
+  uvicorn app:app --reload --host=0.0.0.0 --port=8001
+  ( --host=0.0.0.0  : 모든 접근이 가능하도록 하기 위해)
 
 ### 참고한 소스 
 AI Detect Model : https://github.com/GantMan/nsfw_model.git
